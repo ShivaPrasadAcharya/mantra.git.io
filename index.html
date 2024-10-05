@@ -1,51 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mantra</title>
-  <style>
-.indentforty{
-text-indent: 43%;
-
-}
-
-.indentthirty{
-text-indent: 30%;
-
-}
-
-.center{
-text-align: center;
-
-}
-
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>मन्त्र</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+        .mantra-container {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: 30px;
+        }
+        .mantra-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        .source {
+            font-style: italic;
+            color: #6c757d;
+        }
+        .btn-toggle {
+            margin-top: 20px;
+        }
+        .nepali-text {
+            font-family: 'Noto Sans', sans-serif;
+        }
+    </style>
 </head>
 <body>
-  <div class="center">श्री गणेशायः नमः</div><br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">मन्त्र पोर्टल</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">गृहपृष्ठ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">हाम्रोबारे</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">सम्पर्क</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <div class="center">वक्रतुंड महाकाय सूर्यकोटिसमप्रभ।</div>
-<div class="center">निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</div><br>
+    <div class="container">
+        <div class="mantra-container">
+            <h1 class="text-center mb-4">संस्कृत मन्त्रहरू</h1>
+            
+            <div class="mantra-text">
+                <p class="text-center">॥ श्री गणेशायः नमः ॥</p>
+                <hr>
+                <p class="text-center">वक्रतुंड महाकाय सूर्यकोटिसमप्रभ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥</p>
+                <hr>
+                <p class="text-center">गजाननं भूतगणादिसेवितं कपित्थजंबूफलचारुभक्षणम्‌ ।<br>उमासुतं शोकविनाशकारकं नमामि विघ्नेश्वरपादपङ्कजम्‌ ॥</p>
+                <hr>
+                <p>कराग्रे वसते लक्ष्मीः करमध्ये सरस्वती।<br>करमूले स्थितो ब्रह्मा प्रभाते करदर्शनम् ॥</p>
+                <p class="source text-end">(आचार्यप्रदीप)</p>
+                <hr>
+                <p>समुद्रवसने देवि पर्वतस्तनमण्डिते।<br>विष्णुपत्नि नमस्तुभ्यं पादस्पर्शं क्षमस्व मे ॥</p>
+                <hr>
+                <p>ॐ अपवित्रः पवित्रो वा सर्वावस्थां गतोऽपि वा ।<br>यः स्मरेत् पुण्डरीकाक्षं स बाह्याभ्यन्तरः शुचिः ॥<br>अतिनीलघनश्यामं स्मरामि नलिनायतलोचनम् ।<br>पुण्डरीकाक्षं तेन स्नातो भवाम्यहम् ॥</p>
+                <p class="source text-end">(आचारभूषण, पृ० ४ में वामनपुराणका वचन)</p>
+            </div>
 
-  <div class="center">गजाननं भूतगणादिसेवितं कपित्थजंबूफलचारुभक्षणम्‌ ।</div>
-<div class="center">उमासुतं शोकविनाशकारकं नमामि विघ्नेश्वरपादपङ्कजम्‌ ॥</div><br><br>
+            <div class="text-center">
+                <button class="btn btn-primary btn-toggle" onclick="toggleTranslation()">नेपाली अनुवाद देखाउनुहोस्</button>
+            </div>
 
+            <div id="translation" class="mt-4 nepali-text" style="display: none;">
+                <h4 class="text-center">नेपाली अनुवाद</h4>
+                <p>१. श्री गणेशलाई नमस्कार</p>
+                <p>२. हे बाङ्गो सुँडका, विशाल शरीर भएका, करोडौं सूर्य जस्तै चम्किला देव! मेरा सबै कार्यहरूमा सधैं निर्विघ्न गराइदिनुहोस्।</p>
+                <p>३. भूतगणहरूद्वारा सेवित, कपिथ र जामुन फल खाने, उमाको पुत्र, शोक विनाशक, हात्तीको मुख भएका गणेश भगवानको चरण कमलमा म नमस्कार गर्दछु।</p>
+                <p>४. हातको टुप्पोमा लक्ष्मी बस्छिन्, हातको बीचमा सरस्वती, र हातको फेदमा ब्रह्मा बस्छन्। त्यसैले बिहान उठ्दा हात हेर्नुपर्छ।</p>
+                <p>५. हे समुद्र वस्त्र धारण गर्ने देवी, पर्वत जस्ता स्तनहरूले सुशोभित, विष्णुपत्नी! तपाईंलाई नमस्कार छ। मेरो पाउले छोएकोमा क्षमा गर्नुहोस्।</p>
+                <p>६. अपवित्र वा पवित्र, वा कुनै पनि अवस्थामा रहेको भए तापनि, जसले कमल नयन भएका भगवान् (विष्णु) लाई सम्झन्छ, ऊ बाहिर र भित्र दुवै शुद्ध हुन्छ।</p>
+            </div>
+        </div>
+    </div>
 
-  <div class="">कराग्रे वसते लक्ष्मीः करमध्ये सरस्वती। </div>
-   <div class="">करमूले स्थितो ब्रह्मा प्रभाते करदर्शनम् ॥</div><br>
-<div class="indentthirty">(आचार्यप्रदीप)</div><br>
+    <footer class="bg-light text-center text-lg-start mt-4">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © २०२४ मन्त्र पोर्टल। सर्वाधिकार सुरक्षित।
+        </div>
+    </footer>
 
-
-<div class="">समुद्रवसने देवि पर्वतस्तनमण्डिते।</div>
-<div class="">विष्णुपत्नि नमस्तुभ्यं पादस्पर्शं क्षमस्व मे ॥</div><br>
-
-<div class="">ॐ अपवित्रः पवित्रो वा सर्वावस्थां गतोऽपि वा ।</div>
-<div class="">यः स्मरेत् पुण्डरीकाक्षं स बाह्याभ्यन्तरः शुचिः ॥</div>
-<div class="">अतिनीलघनश्यामं स्मरामि नलिनायतलोचनम् । </div>
-<div class="">पुण्डरीकाक्षं तेन स्नातो भवाम्यहम् ॥ </div>
-<div class="indentthirty">(आचारभूषण, पृ० ४ में वामनपुराणका वचन)</div><br>
+    <script>
+        function toggleTranslation() {
+            var translationDiv = document.getElementById("translation");
+            var btnToggle = document.querySelector(".btn-toggle");
+            if (translationDiv.style.display === "none") {
+                translationDiv.style.display = "block";
+                btnToggle.textContent = "नेपाली अनुवाद लुकाउनुहोस्";
+            } else {
+                translationDiv.style.display = "none";
+                btnToggle.textContent = "नेपाली अनुवाद देखाउनुहोस्";
+            }
+        }
+    </script>
 </body>
 </html>
